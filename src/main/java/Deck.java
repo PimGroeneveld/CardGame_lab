@@ -12,7 +12,7 @@ public class Deck {
 
     }
 
-    public int getCard() {
+    public int numberOfCards(){
         return this.cards.size();
     }
 
@@ -25,11 +25,11 @@ public class Deck {
     }
 
     public void shuffleCards() {
-        Collections.shuffle(cards);
+        Collections.shuffle(this.cards);
         System.out.println(cards);
     }
 
     public Card dealCard() {
-        return cards.remove(0);
+        return this.cards.remove(0);
     }
 }

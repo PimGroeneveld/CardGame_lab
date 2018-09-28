@@ -14,20 +14,20 @@ public class DeckTest {
 
     @Test
     public void deckIsPopulated(){
-        assertEquals(52, deck.getCard());
+        assertEquals(52, deck.numberOfCards());
     }
 
     @Test
     public void canShuffleCards(){
         deck.shuffleCards();
-        assertEquals(52, deck.getCard());
+        assertEquals(52, deck.numberOfCards());
     }
 
     @Test
     public void canDealCard(){
         deck.shuffleCards();
         deck.dealCard();
-        assertEquals(51, deck.getCard());
+        assertEquals(51, deck.numberOfCards());
     }
 
 }

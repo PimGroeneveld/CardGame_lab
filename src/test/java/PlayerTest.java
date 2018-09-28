@@ -1,30 +1,40 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class PlayerTest {
 
-    Player player1;
-    Player player2;
-    Deck deck;
-    Card cards;
+    Player player;
+    Card card;
 
     @Before
     public void before(){
-        player1 = new Player("John");
-        player2 = new Player("Pete");
+        player = new Player("Player 1");
+        card = new Card(Suit.HEARTS, Rank.FIVE);
     }
 
     @Test
-    public void playersHaveName(){
-        assertEquals("John", player1.getName());
+    public void hasName(){
+        assertEquals("Player 1", player.getName());
     }
 
     @Test
-    public void canTakeCard(){
-        player1.takeCard();
-        assertEquals(1, player1.getHand().size());
+    public void canAddCard(){
+        player.addCard(card);
+        assertEquals(1, player.numberOfCards());
     }
 
+    @Test
+    public void canEmptyHand(){
+        player.addCard(card);
+        player.emptyHand();
+        assertEquals(0, player.numberOfCards());
+    }
+
+    @Test
+    public void hasHandValue(){
+        player.addCard(card);
+        assertEquals(5, player.getHandValue());
+    }
 }

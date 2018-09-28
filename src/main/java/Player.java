@@ -2,25 +2,36 @@ import java.util.ArrayList;
 
 public class Player {
 
-    private ArrayList<Card> hand;
     private String name;
+    private ArrayList<Card> hand;
 
-    public Player(String name){
+    public Player(String name) {
         this.name = name;
         this.hand = new ArrayList<>();
-    }
-
-    public ArrayList<Card> getHand() {
-        return hand;
     }
 
     public String getName() {
         return name;
     }
 
-//    public void takeCard() {
-//        deck.populateDeck();
-//        Card card = deck.dealCard();
-//        hand.add(card);
-//    }
+    public void addCard(Card card){
+        this.hand.add(card);
+    }
+
+    public int numberOfCards(){
+        return this.hand.size();
+    }
+
+    public void emptyHand(){
+        this.hand.clear();
+    }
+
+    public int getHandValue(){
+        int total = 0;
+        for (Card card : this.hand){
+            total += card.getValue();
+        }
+        return total;
+
+    }
 }

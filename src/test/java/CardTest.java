@@ -1,7 +1,5 @@
-import org.junit.Before;
-import org.junit.Test;
-
 import static org.junit.Assert.*;
+import org.junit.*;
 
 public class CardTest {
 
@@ -9,15 +7,22 @@ public class CardTest {
 
     @Before
     public void before(){
-        card = new Card(Suit.SPADES, Rank.ACE);
+        card = new Card(Suit.HEARTS, Rank.ACE);
     }
 
     @Test
-    public void getSuit() {
+    public void canGetSuit(){
+        assertEquals(Suit.HEARTS,card.getSuit());
     }
 
     @Test
-    public void getRank() {
+    public void canGetRank(){
+        assertEquals(Rank.ACE, card.getRank());
+    }
+
+    @Test
+    public void aceHasValueOf1(){
+        assertEquals(1, card.getValue());
     }
 
 }
