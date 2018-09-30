@@ -17,7 +17,7 @@ public class Player {
     }
 
     public boolean checkIfDealer() {
-        if (this.isDealer = true) {
+        if (this.isDealer == true) {
             return true;
         } else {
             return false;
@@ -45,6 +45,10 @@ public class Player {
                 total += card.getMinValue();
             }
         }
+        if (total >= 22){
+            total = 0;
+        }
         return total;
     }
+
 }

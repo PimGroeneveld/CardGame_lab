@@ -28,6 +28,7 @@ public class PlayerTest {
     @Test
     public void checkForDealer(){
         assertEquals(true, player2.checkIfDealer());
+        assertEquals(false, player.checkIfDealer());
     }
 
     @Test

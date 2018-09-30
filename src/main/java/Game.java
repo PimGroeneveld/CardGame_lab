@@ -19,8 +19,13 @@ public class Game {
             Card card2 = dealer.deal(deck);
             player.addCard(card2);
         }
+        for (Player player : this.players){
+            if (player.getHandValue() < 16 && player.checkIfDealer() == true){
+                Card card3 = dealer.deal(deck);
+                player.addCard(card3);
+            }
+        }
     }
-
 
     public String checkWinner() {
         Player winner = players.get(0);
@@ -28,6 +33,7 @@ public class Game {
         for (Player player : this.players) {
             if (player.getHandValue() > winner.getHandValue()) {
                 winner = player;
+                System.out.println(player.getHandValue());
             }
         }
 
@@ -40,7 +46,6 @@ public class Game {
         return winner.getName();
 
     }
-
 
     public boolean checkDraw() {
         boolean draw = false;
