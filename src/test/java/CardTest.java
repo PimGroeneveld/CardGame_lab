@@ -27,4 +27,14 @@ public class CardTest {
         assertEquals(10, card.getValue());
     }
 
+    @Test
+    public void aceHasMinValueOf1(){
+        assertEquals(1, card2.getMinValue());
+    }
+
+    @Test
+    public void aceHasMaxValueOf11(){
+        assertEquals(11, card2.getMaxValue());
+    }
+
 }

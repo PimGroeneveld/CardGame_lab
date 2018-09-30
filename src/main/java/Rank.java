@@ -11,9 +11,9 @@ public enum Rank {
     EIGHT(8),
     NINE(9),
     TEN(10),
-    JACK(11),
-    QUEEN(12),
-    KING(13);
+    JACK(10),
+    QUEEN(10),
+    KING(10);
 
     private final int value;     // final = const from JS
     Rank(int value){   // gives constructor to Enum
@@ -23,20 +23,4 @@ public enum Rank {
     public int getValue(){
         return value;
     }
-
-//    public int getValue(int currentVal)
-//    {
-//        int cardValue = 0;
-//
-//        if (value == 1 && currentVal < 11)
-//            cardValue = 11;
-//        else if(value == 1)
-//            cardValue = 1;
-//        else if (value == 11 || value == 12 || value == 13)
-//            cardValue = 10;
-//        else
-//            cardValue = value;
-//
-//        return cardValue;
-//    }
 }

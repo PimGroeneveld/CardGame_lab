@@ -8,12 +8,16 @@ public class PlayerTest {
     Player player;
     Player player2;
     Card card;
+    Card faceCard;
+    Card aceCard;
 
     @Before
     public void before(){
         player = new Player("Player 1", false);
         player2 = new Player("Player 1", true);
         card = new Card(Suit.HEARTS, Rank.FIVE);
+        faceCard = new Card(Suit.HEARTS, Rank.KING);
+        aceCard = new Card(Suit.SPADES, Rank.ACE);
     }
 
     @Test
@@ -44,4 +48,25 @@ public class PlayerTest {
         player.addCard(card);
         assertEquals(5, player.getHandValue());
     }
+
+    @Test
+    public void kingHasHandValueOfTen(){
+        player.addCard(faceCard);
+        assertEquals(10, player.getHandValue());
+    }
+
+    @Test
+    public void aceHasHandValueOfElevenIfHandSmallerThan11(){
+        player.addCard(aceCard);
+        assertEquals(11, player.getHandValue());
+    }
+
+    @Test
+    public void aceHasHandValueOfOneIfHandEqualOrGreaterThan11(){
+        player.addCard(faceCard);
+        player.addCard(card);
+        player.addCard(aceCard);
+        assertEquals(16, player.getHandValue());
+    }
+
 }

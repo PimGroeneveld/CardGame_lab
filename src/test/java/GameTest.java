@@ -54,5 +54,4 @@ public class GameTest {
         assertNull(game.checkWinner());
     }
 
-
 }
