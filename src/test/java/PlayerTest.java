@@ -6,17 +6,24 @@ import static org.junit.Assert.assertEquals;
 public class PlayerTest {
 
     Player player;
+    Player player2;
     Card card;
 
     @Before
     public void before(){
-        player = new Player("Player 1");
+        player = new Player("Player 1", false);
+        player2 = new Player("Player 1", true);
         card = new Card(Suit.HEARTS, Rank.FIVE);
     }
 
     @Test
     public void hasName(){
         assertEquals("Player 1", player.getName());
+    }
+
+    @Test
+    public void checkForDealer(){
+        assertEquals(true, player2.checkIfDealer());
     }
 
     @Test

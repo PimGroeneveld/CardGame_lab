@@ -20,7 +20,23 @@ public enum Rank {
         this.value = value;  // attaches int value to every enum
     }
 
-    public int getValue() {
+    public int getValue(){
         return value;
     }
+
+//    public int getValue(int currentVal)
+//    {
+//        int cardValue = 0;
+//
+//        if (value == 1 && currentVal < 11)
+//            cardValue = 11;
+//        else if(value == 1)
+//            cardValue = 1;
+//        else if (value == 11 || value == 12 || value == 13)
+//            cardValue = 10;
+//        else
+//            cardValue = value;
+//
+//        return cardValue;
+//    }
 }

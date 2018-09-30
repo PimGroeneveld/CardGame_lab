@@ -8,11 +8,13 @@ public class DealerTest {
 
     Dealer dealer;
     Deck deck;
+    Card card;
 
     @Before
     public void before(){
         dealer = new Dealer();
         deck = new Deck();
+        card = new Card(Suit.HEARTS, Rank.FIVE);
     }
 
     @Test
@@ -21,4 +23,5 @@ public class DealerTest {
         assertNotNull(card);
         assertEquals(51, deck.numberOfCards());
     }
+
 }

@@ -4,10 +4,12 @@ import org.junit.*;
 public class CardTest {
 
     Card card;
+    Card card2;
 
     @Before
     public void before(){
-        card = new Card(Suit.HEARTS, Rank.ACE);
+        card = new Card(Suit.HEARTS, Rank.KING);
+        card2 = new Card(Suit.HEARTS, Rank.ACE);
     }
 
     @Test
@@ -17,12 +19,12 @@ public class CardTest {
 
     @Test
     public void canGetRank(){
-        assertEquals(Rank.ACE, card.getRank());
+        assertEquals(Rank.KING, card.getRank());
     }
 
     @Test
-    public void aceHasValueOf1(){
-        assertEquals(1, card.getValue());
+    public void kingHasValueOf10(){
+        assertEquals(10, card.getValue());
     }
 
 }

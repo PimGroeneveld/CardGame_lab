@@ -14,13 +14,15 @@ public class Game {
 
     public void play() {
         for (Player player : this.players) {
-            Card card = dealer.deal(deck);
-            player.addCard(card);
+            Card card1 = dealer.deal(deck);
+            player.addCard(card1);
+            Card card2 = dealer.deal(deck);
+            player.addCard(card2);
         }
     }
 
 
-    public Player checkWinner() {
+    public String checkWinner() {
         Player winner = players.get(0);
 
         for (Player player : this.players) {
@@ -34,9 +36,11 @@ public class Game {
         {
             return null;
         }
-        return winner;
+        System.out.println("the winner is: " + winner.getName());
+        return winner.getName();
 
     }
+
 
     public boolean checkDraw() {
         boolean draw = false;
